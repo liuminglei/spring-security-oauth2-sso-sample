@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /oa
+
+spring:
+  application:
+    name: oa application
+    version: 1.0
+
+security:
+  oauth2:
+    client:
+      client-id: oa
+      client-secret: oa_secret
+      access-token-uri: http://localhost:8888/oauth/token
+      user-authorization-uri: http://localhost:8888/oauth/authorize
+    resource:
+      jwt:
+        key-uri: http://localhost:8888/oauth/token_key
+
+crm:
+  profile-uri: http://localhost:8090/crm/system/profile

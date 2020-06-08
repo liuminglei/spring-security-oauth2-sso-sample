@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CRM-移动营销平台</title>
+    <meta name="description" content="CRM-移动营销平台">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" th:href="@{/assets/css/normalize.css}" href="../static/assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}" href="../static/assets/bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}" href="../static/assets/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" th:href="@{/assets/css/style.css}" href="../static/assets/css/style.css">
+</head>
+<body class="bg-white">
+    <div class="d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <h1>CRM-移动营销平台</h1>
+                </div>
+                <div class="login-form">
+                    <form th:action="@{/login}" method="post" th:method="post" class="mt-1">
+                        <div class="form-group" th:text="${name}">
+                            <label>系统名称：</label>CRM
+                        </div>
+                        <div class="form-group" th:text="${version}">
+                            <label>系统版本：</label>1.0
+                        </div>
+                        <div class="form-group">
+                            <a href="http://localhost:8080/oa/system/profile" th:href="${oaProfileUri}" target="_blank">OA-综合办公平台</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" th:src="@{/assets/js/jquery-2.1.4.min.js}" src="../static/assets/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" th:src="@{/assets/bootstrap/js/bootstrap.min.js}" src="../static/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" th:src="@{/assets/js/main.js}" src="../static/assets/js/main.js"></script>
+</html>

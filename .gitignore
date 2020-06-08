@@ -1,0 +1,38 @@
+/target/
+/bin/
+/.settings/
+!.mvn/wrapper/maven-wrapper.jar
+**/target/**
+**/**/target/**
+
+### mvn tools ###
+mvnw
+mvnw.cmd
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+.gitee
+.mvn
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# CMake
+cmake-build-debug/
