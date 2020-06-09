@@ -13,32 +13,31 @@
 
 </head>
 <body class="bg-white">
-    <div class="d-flex align-content-center flex-wrap">
-        <div class="container">
-            <div class="login-content">
-                <div class="login-logo">
-                    <h1>统一认证授权中心</h1>
-                </div>
-                <div class="login-form">
-                    <form th:action="@{/login}" method="post" th:method="post" class="mt-1">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="用户名">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="密码">
-                        </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox"> 记住我</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block mb-1 mt-1">登录</button>
-                        <p class="text-muted text-center"> <a href="login.html#">
-                            <small>忘记密码了？</small></a> | <a href="register.html">注册一个新账号</a>
-                        </p>
-                    </form>
-                </div>
+<div class="d-flex align-content-center flex-wrap">
+    <div class="container">
+        <div class="login-content">
+            <div class="login-logo">
+                <h1>欢迎登录统一认证授权中心</h1>
+            </div>
+            <div class="login-form">
+                <form th:action="@{/login}" method="post" th:method="post" class="mt-1">
+                    <div class="form-group" th:text="${name}">
+                        <label>系统名称：</label>OA
+                    </div>
+                    <div class="form-group" th:text="${version}">
+                        <label>系统版本：</label>1.0
+                    </div>
+                    <div class="form-group">
+                        <a href="http://localhost:8080/oa/system/profile" th:href="${oaProfileUri}"  target="_blank">OA-综合办公平台</a>
+                    </div>
+                    <div class="form-group">
+                        <a href="http://localhost:8090/crm/system/profile" th:href="${crmProfileUri}"  target="_blank">CRM-移动营销平台</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </body>
 <script type="text/javascript" th:src="@{/assets/js/jquery-2.1.4.min.js}" src="../static/assets/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" th:src="@{/assets/bootstrap/js/bootstrap.min.js}" src="../static/assets/bootstrap/js/bootstrap.min.js"></script>

@@ -17,6 +17,10 @@
     <name>spring-security-oauth2-sso-sample</name>
     <url>http://maven.apache.org</url>
 
+    <properties>
+        <spring-security-oauth2-autoconfigure.version>2.1.3.RELEASE</spring-security-oauth2-autoconfigure.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -36,6 +40,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.security.oauth.boot</groupId>
+                <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+                <version>${spring-security-oauth2-autoconfigure.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <modules>
         <module>sso-auth-server</module>
