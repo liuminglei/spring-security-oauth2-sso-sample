@@ -21,6 +21,9 @@
             </div>
             <div class="login-form">
                 <form th:action="@{/login}" method="post" th:method="post" class="mt-1">
+                    <div class="form-group">
+                        当前登录用户：<span th:text="${username}">admin</span>, <a th:href="@{/logout}">退出</a>
+                    </div>
                     <div class="form-group" th:text="${name}">
                         <label>系统名称：</label>OA
                     </div>

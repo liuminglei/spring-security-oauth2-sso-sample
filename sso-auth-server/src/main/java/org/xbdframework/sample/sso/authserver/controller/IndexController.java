@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
+
 @Controller
 @RequestMapping
 public class IndexController {
@@ -22,7 +24,8 @@ public class IndexController {
     public String crmProfileUri;
 
     @RequestMapping("/index")
-    public String index(Model model) {
+    public String index(Principal principal, Model model) {
+        model.addAttribute("username", principal.getName());
         model.addAttribute("name", name);
         model.addAttribute("version", version);
         model.addAttribute("oaProfileUri", oaProfileUri);
