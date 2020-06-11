@@ -18,8 +18,6 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @Configuration
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
-//    @Autowired
-//    private DataSource dataSource;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -32,16 +30,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(a1());
+        clients.withClientDetails(inMemoryClientDetailsService());
     }
 
-//    @Bean
-//    public ClientDetailsService jdbcClientDetailsServiceBuilder() throws Exception {
-//        return new JdbcClientDetailsServiceBuilder().dataSource(dataSource).passwordEncoder(passwordEncoder).build();
-//    }
 
     @Bean
-    public ClientDetailsService a1() throws Exception {
+    public ClientDetailsService inMemoryClientDetailsService() throws Exception {
         return new InMemoryClientDetailsServiceBuilder()
                 // client oa application
                 .withClient("oa")
